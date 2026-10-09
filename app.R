@@ -25,23 +25,14 @@ ui <- fluidPage(
       h5("Accident Year 2017:"),
       helpText("Claim Paid for 2017, 2018, 2019"),
       splitLayout(
-<<<<<<< HEAD
         numericInput("c11", NULL, 524792), numericInput("c12", NULL, 743057),
         numericInput("c13", NULL, 745282)
-=======
-        numericInput("c11", NULL, 524792), numericInput("c12", NULL, 218265),
-        numericInput("c13", NULL, 2225)
->>>>>>> a6dc1bdb2e789a771b4fabe1a375ba59c75a03c5
       ),
       
       h5("Accident Year 2018:"),
       helpText("Claim Paid for 2018, 2019"),
       splitLayout(
-<<<<<<< HEAD
         numericInput("c21", NULL, 798502), numericInput("c22", NULL,995659),
-=======
-        numericInput("c21", NULL, 798502), numericInput("c22", NULL,197157),
->>>>>>> a6dc1bdb2e789a771b4fabe1a375ba59c75a03c5
       ),
       
       h5("Accident Year 2019:"),
@@ -102,13 +93,11 @@ server <- function(input, output, session) {
     } else {
       # if no file attached
       #input must be in incremental not cumulative
-<<<<<<< HEAD
+
       tri[1, ] <- c(input$c11, input$c12, input$c13)
       tri[2, 1:2] <- c(input$c21, input$c22)
-=======
       tri[1, ] <- c(input$c11, input$c11+input$c12, input$c11+input$c12+input$c13)
       tri[2, 1:2] <- c(input$c21, input$c21+input$c22)
->>>>>>> a6dc1bdb2e789a771b4fabe1a375ba59c75a03c5
       tri[3, 1] <- input$c31
       
       rownames(tri) <- c("2017", "2018", "2019")
@@ -196,7 +185,7 @@ server <- function(input, output, session) {
   })
 }
 
-<<<<<<< HEAD
+
 shinyApp(ui, server)
 library(shiny)
 library(readxl)
@@ -383,7 +372,5 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
-rsconnect::writenManifest()
-=======
-shinyApp(ui, server)
->>>>>>> a6dc1bdb2e789a771b4fabe1a375ba59c75a03c5
+#rsconnect::writenManifest()
+
